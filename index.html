@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>استثمر الآن — موقع تجريبي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#5a75e5; /* near black */
+      --accent1:#6ee7f7; /* sky */
+      --accent2:#9b5cf6; /* purple */
+      --muted:#9aa3b2;
+      --card:#5376cf;
+      --glass: rgba(2, 51, 63, 0.04);
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, sans-serif; margin:0; background:linear-gradient(135deg,var(--bg1) 0%, #0c0f16 40%); color:white; -webkit-font-smoothing:antialiased}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#031022}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:32px}
+    .hero h1{font-size:36px;margin:0 0 12px}
+    .hero p{color:var(--muted);line-height:1.6}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:20px;box-shadow:0 6px 30px rgba(0,0,0,0.5);}
+    .signup input, .signup select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:white;margin-bottom:10px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#031022;font-weight:700;border:none;cursor:pointer}
+    .socials{display:flex;gap:8px;margin-top:8px}
+    .socials button{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted);cursor:pointer}
+    .features{display:flex;gap:12px;margin-top:28px}
+    .feature{flex:1;padding:16px;border-radius:12px;background:var(--card)}
+    .how{margin-top:34px}
+    footer{margin-top:40px;padding:20px 0;color:var(--muted);text-align:center}
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .card{margin-top:18px}
+    }
+    /* comments */
+    .note{font-size:13px;color:var(--muted);margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">س</div>
+        <div>
+          <div style="font-weight:700">منصة استثمر</div>
+          <div style="font-size:12px;color:var(--muted)">ابدأ استثمارك عبر الإنترنت</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">مميزات</a>
+        <a href="#plans">الباقات</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>اصنع دخل مستدام عبر الإنترنت — ابدأ اليوم</h1>
+        <p>صفحة هبوط لبناء مشروع استثماري رقمي: بيع معلومات، برامج اشتراك، خدمات استشارية أو تحويل الزوار إلى عملاء. هذه النسخة جاهزة للتجربة — يمكنك تعديل النصوص والروابط بسهولة.</p>
+
+        <div class="features" id="features">
+          <div class="feature card">
+            <h3>إدارة بسيطة</h3>
+            <p class="note">نموذج تواصل مباشر عبر البريد، لوحة تحكم مستقبلية، وتقارير أداء.</p>
+          </div>
+          <div class="feature card">
+            <h3>تحويل الزوار</h3>
+            <p class="note">نماذج تسجيل وحملات إعلانية قابلة للإضافة لزيادة الاشتراكات.</p>
+          </div>
+          <div class="feature card">
+            <h3>آمن وموثوق</h3>
+            <p class="note">تصميم متوافق مع معايير الويب وسهل التهيئة لاستعمال شهادة SSL.</p>
+          </div>
+        </div>
+
+        <div class="how">
+          <h3>كيف يعمل الموقع؟</h3>
+          <ol style="color:var(--muted);line-height:1.8">
+            <li>تنشئ صفحات محتوى أو منتج.</li>
+            <li>تجذب زوارًا عبر إعلانات أو سيو.</li>
+            <li>تحول الزوار لعملاء عن طريق الاشتراك أو الشراء.</li>
+          </ol>
+        </div>
+      </div>
+
+      <aside class="card signup">
+        <h3 style="margin-top:0">سجل حسابك الآن</h3>
+        <form id="regForm" onsubmit="handleSubmit(event)">
+          <label>اسم المستخدم</label>
+          <input required name="username" placeholder="مثلاً: Mostafa" />
+          <label>البريد الإلكتروني</label>
+          <input required name="email" type="email" placeholder="example@mail.com" />
+          <label>كلمة المرور</label>
+          <input required name="password" type="password" placeholder="••••••••" />
+          <label>الـ ID (اختياري)</label>
+          <input name="userId" placeholder="مثلاً: 12345" />
+
+          <button class="btn" type="submit">تسجيل وإرسال البيانات</button>
+        </form>
+
+        <div class="socials">
+          <button onclick="socialClick('google')">تسجيل عبر جوجل</button>
+          <button onclick="socialClick('facebook')">فيسبوك</button>
+          <button onclick="socialClick('twitter')">تويتر</button>
+        </div>
+
+        <p class="note">ملاحظَة: الأزرار الاجتماعية هنا للعرض فقط — تحتاج إعداد OAuth فعلي لعمل تسجيل حقيقي.</p>
+      </aside>
+    </section>
+
+    <section id="plans" style="margin-top:28px">
+      <h2>الباقات والخطة</h2>
+      <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+        <div class="card" style="flex:1;min-width:220px">
+          <h3>باقة بداية</h3>
+          <p class="note">مناسبة للمبتدئين: محتوى رقمي واحد ومساحة استضافة أساسية.</p>
+        </div>
+        <div class="card" style="flex:1;min-width:220px">
+          <h3>باقة نمو</h3>
+          <p class="note">تحليلات مبسطة، أدوات تسويق، وأتمتة بريدية.</p>
+        </div>
+        <div class="card" style="flex:1;min-width:220px">
+          <h3>باقة احترافية</h3>
+          <p class="note">تكامل بوابات دفع، لوحة تحكم متقدمة، ودعم فني.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:28px;display:flex;gap:12px;align-items:flex-start">
+      <div style="flex:1">
+        <h3>اتصل بنا</h3>
+        <p class="note">للاختبارات هذه الصفحة ترسل أي بيانات نموذج بالبريد إلى البريد الإلكتروني المُعرّف داخل صفحة الويب (يمكن تغييره بسهولة).</p>
+      </div>
+      <div style="width:320px" class="card">
+        <h4>أرسل تعليق</h4>
+        <form id="commentForm" onsubmit="handleComment(event)">
+          <input name="name" placeholder="اسمك" required />
+          <input name="email" type="email" placeholder="بريدك" required />
+          <textarea name="message" placeholder="رسالتك" style="width:100%;height:90px;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:white"></textarea>
+          <button class="btn" type="submit">إرسال تعليق</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      نسخة تجريبية — غير مهيأة للاستخدام الإنتاجي بدون خادم خلفي. قم باستضافة هذه الصفحة على GitHub Pages أو أي استضافة ثابتة لتجربة المظهر. 
+    </footer>
+  </div>
+
+  <script>
+    // البريد الافتراضي الذي ستصلك عليه بيانات التسجيل/التعليقات
+    const RECEIVER_EMAIL = 'mos736738433@gmail.com'; // غيّر هذا إلى بريدك
+
+    function buildMailto(subject, body){
+      return `mailto:${RECEIVER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const f = e.target;
+      const data = {
+        username: f.username.value,
+        email: f.email.value,
+        password: f.password.value,
+        userId: f.userId.value
+      };
+      const body = `تسجيل مستخدم جديد\n\n` + Object.entries(data).map(([k,v])=>`${k}: ${v}`).join('\n');
+      // نفتح عميل البريد الخاص بالمستخدم ليُرسل الرسالة
+      window.location.href = buildMailto('تسجيل مستخدم — منصة استثمر', body);
+    }
+
+    function handleComment(e){
+      e.preventDefault();
+      const f = e.target;
+      const data = {name: f.name.value, email: f.email.value, message: f.message.value};
+      const body = `تعليق جديد\n\n` + Object.entries(data).map(([k,v])=>`${k}: ${v}`).join('\n');
+      window.location.href = buildMailto('تعليق من موقع استثمر', body);
+    }
+
+    function socialClick(provider){
+      alert('زر تسجيل عبر ' + provider + ' للعرض فقط. لو تريد أفعاله حقيقيّة سأضيف خطوات OAuth.');
+    }
+  </script>
+</body>
+</html>
